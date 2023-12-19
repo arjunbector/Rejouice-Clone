@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: nb;
+    src: url("../fonts/NBInternationalProBoo.ttf");
+}
+
+@font-face {
+    font-family: rejouice;
+    src: url("../fonts/Rejouice-Headline.ttf");
+}

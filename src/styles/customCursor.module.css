@@ -1,0 +1,18 @@
+.cursor{
+    height: 7vw;
+    width: 7vw;
+    background-color: #FF5F38;
+    position: fixed;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -9;
+    transform: translate(-50%, -50%);
+}
+
+.text{
+    font-family: "nb";
+    font-weight: 100;
+    color: black;
+}

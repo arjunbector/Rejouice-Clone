@@ -1,9 +1,15 @@
-.navbar{
+.navbar {
     position: absolute;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 7vh 7vb;
+    padding: 6.5vh 6vb;
+    font-family: nb;
+    font-weight: 100;
+}
+
+.head {
+    font-weight: 100;
 }
