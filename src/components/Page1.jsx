@@ -5,18 +5,33 @@ import CustomeCursor from "./CustomeCursor";
 import { useState } from "react";
 
 const Page1 = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0});
+  const [scale, setScale] = useState(0);
   const handleMouseMove = (event) => {
     setMousePosition({
       x: event.clientX,
       y: event.clientY,
     });
   };
+
+  const handleMouseEnter = () => {
+    setScale(1);
+    
+  };
+  const handleMouseLeave = () => {
+    setScale(0);
+    
+  };
   return (
-    <main className={styles.main} onMouseMove={handleMouseMove}>
+    <main
+      className={styles.main}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Navbar />
       <div className={styles.page1}>
-        <CustomeCursor mousePosition={mousePosition}/>
+        <CustomeCursor mousePosition={mousePosition} scale={scale}/>
         <video
           className={styles.video}
           autoPlay

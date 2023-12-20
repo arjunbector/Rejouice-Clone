@@ -4,6 +4,10 @@ const Home = ()=>{
   return(
     <main>
     <Page1/>
+    <div style={{
+      height:"100vh"
+    }
+    }></div>
     </main>
   )
 }
