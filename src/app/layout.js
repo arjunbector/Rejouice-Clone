@@ -2,7 +2,7 @@ import './globals.css'
 
 
 export const metadata = {
-  title: 'Rejouice ',
+  title: 'Home | REJOUICE',
   description: 'Clone of rejouice.com for brushing up css skills.',
 }
 

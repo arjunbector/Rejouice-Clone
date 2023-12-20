@@ -1,0 +1,27 @@
+.main{
+    height: 100vh;
+    font-family: "nb";
+    background-color: #FAF8F3;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10vh 6vb;
+}
+.header-heading{
+    font-weight: 200;
+    font-size: 3.5vb;
+}
+
+.header-right{
+    font-size: 3.5vb;
+}
+
+.line{
+    display: block;
+    margin: auto;
+    width: 95%;
+    height: 1px;
+    background-color: black;
+}

@@ -3,25 +3,42 @@ import Navbar from "./Navbar";
 import styles from "../styles/Page1.module.css";
 import CustomeCursor from "./CustomeCursor";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Page1 = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0});
-  const [scale, setScale] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [scale, setScale] = useState(1);
   const handleMouseMove = (event) => {
     setMousePosition({
       x: event.clientX,
       y: event.clientY,
     });
   };
-
+  const text = ["r", "e", "j", "o", "u", "i", "c", "e"];
   const handleMouseEnter = () => {
     setScale(1);
-    
   };
   const handleMouseLeave = () => {
     setScale(0);
-    
   };
+
+  const container = {
+    hidden: { opacity: 0,
+    y:100 },
+    show: {
+      opacity: 1,
+      y:0,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y:100 },
+    show: { opacity: 1, y:0 },
+  };
+
   return (
     <main
       className={styles.main}
@@ -31,7 +48,7 @@ const Page1 = () => {
     >
       <Navbar />
       <div className={styles.page1}>
-        <CustomeCursor mousePosition={mousePosition} scale={scale}/>
+        <CustomeCursor mousePosition={mousePosition} scale={scale} />
         <video
           className={styles.video}
           autoPlay
@@ -40,16 +57,21 @@ const Page1 = () => {
           src="/assets/bgVideo.mp4"
         ></video>
         <div className={`${styles["page1-content"]}`}>
-          <h1 className={`${styles["main-heading"]}`}>
-            <span className={styles.span}>r</span>
-            <span className={styles.span}>e</span>
-            <span className={styles.span}>j</span>
-            <span className={styles.span}>o</span>
-            <span className={styles.span}>u</span>
-            <span className={styles.span}>i</span>
-            <span className={styles.span}>c</span>
-            <span className={styles.span}>e</span>
-          </h1>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className={`${styles["main-heading"]}`}
+          >
+            <motion.span variants={item} className={styles.span}>r</motion.span>
+            <motion.span variants={item} className={styles.span}>e</motion.span>
+            <motion.span variants={item} className={styles.span}>j</motion.span>
+            <motion.span variants={item} className={styles.span}>o</motion.span>
+            <motion.span variants={item} className={styles.span}>u</motion.span>
+            <motion.span variants={item} className={styles.span}>i</motion.span>
+            <motion.span variants={item} className={styles.span}>c</motion.span>
+            {/* <motion.span variants={item} className={styles.span}>e</motion.span> */}
+          </motion.div>
         </div>
       </div>
     </main>
